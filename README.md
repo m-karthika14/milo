@@ -1,6 +1,6 @@
-# Revlo
+# Milo
 
-Product launch landing page for Revlo — turns customer purchases into automatic WhatsApp requests for Google reviews.
+Product launch landing page for Milo — turns customer purchases into automatic WhatsApp requests for Google reviews.
 
 Built with **React + TypeScript + Vite**.
 
@@ -68,9 +68,9 @@ vercel --prod # promotes to production
 ## Add a custom domain
 
 1. In the Vercel dashboard, open your project → **Settings → Domains**.
-2. Enter your domain (e.g. `revlo.com` or `www.revlo.com`) and click **Add**.
+2. Enter your domain (e.g. `milo.com` or `www.milo.com`) and click **Add**.
 3. Vercel shows the DNS record(s) to create:
-   - Apex domain (`revlo.com`): add an **A** record pointing to `76.76.21.21`.
-   - Subdomain (`www.revlo.com`): add a **CNAME** record pointing to `cname.vercel-dns.com`.
+   - Apex domain (`milo.com`): add an **A** record pointing to `76.76.21.21`.
+   - Subdomain (`www.milo.com`): add a **CNAME** record pointing to `cname.vercel-dns.com`.
 4. Add those records at your domain registrar (GoDaddy, Namecheap, Google Domains, etc.).
 5. Wait for DNS to propagate — Vercel auto-issues an SSL certificate once it verifies.

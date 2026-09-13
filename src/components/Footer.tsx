@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="footer-brand">
           <div className="logo">
             <span className="logo-dot" />
-            Revlo
+            Milo
           </div>
           <p>Automated Google review requests for local businesses.</p>
         </div>
@@ -15,7 +15,7 @@ export default function Footer() {
           <a href="#">Contact</a>
         </div>
       </div>
-      <div className="footer-bottom">© 2026 Revlo</div>
+      <div className="footer-bottom">© 2026 Milo</div>
     </footer>
   );
 }

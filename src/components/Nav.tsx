@@ -6,7 +6,7 @@ export default function Nav() {
       <div className="nav-inner">
         <div className="logo">
           <span className="logo-dot" />
-          Revlo
+          Milo
         </div>
         <a
           href="#final-cta"
