@@ -3,18 +3,14 @@ import { scrollToId } from '../utils/scrollTo';
 
 export default function FinalCTA() {
   return (
-    <section className="section-final" id="final-cta">
+    <section className="section-final dark-surface" id="final-cta">
       <div className="final-glow" />
       <div className="section-inner">
         <Reveal as="h2" className="final-headline">
-          More happy customers.
-          <br />
-          More proof.
-          <br />
-          More growth.
+          Your next great review could already be a customer away.
         </Reveal>
         <Reveal as="p" className="final-sub" delay={0.1}>
-          Turn every great customer experience into an opportunity to build your reputation.
+          Automate your customer follow-up with Milo.
         </Reveal>
         <Reveal delay={0.2}>
           <a
@@ -25,7 +21,7 @@ export default function FinalCTA() {
               scrollToId('#top');
             }}
           >
-            Get Started <span className="arrow">→</span>
+            Get started with Milo <span className="arrow">→</span>
           </a>
         </Reveal>
       </div>
