@@ -2,17 +2,6 @@ import { forwardRef } from 'react';
 
 const HeroVisual = forwardRef<HTMLDivElement>((_props, ref) => (
   <div className="stage" id="stage" ref={ref}>
-    <svg className="connectors" viewBox="0 0 340 500" preserveAspectRatio="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#3ecf8e" />
-          <stop offset="100%" stopColor="#6be0ac" />
-        </linearGradient>
-      </defs>
-      <path id="path1" className="connector-line" d="M170 92 C170 140, 170 150, 170 195" pathLength={1} />
-      <path id="path2" className="connector-line" d="M170 292 C170 340, 170 350, 170 385" pathLength={1} />
-    </svg>
-
     <div className="card card-payment">
       <div className="card-row-top">
         <span className="check-icon">✓</span>
@@ -24,6 +13,8 @@ const HeroVisual = forwardRef<HTMLDivElement>((_props, ref) => (
         <span>2:41 PM</span>
       </div>
     </div>
+
+    <div className="connector connector-1" aria-hidden="true" />
 
     <div className="card card-whatsapp">
       <div className="wa-header">
@@ -42,6 +33,8 @@ const HeroVisual = forwardRef<HTMLDivElement>((_props, ref) => (
         </span>
       </div>
     </div>
+
+    <div className="connector connector-2" aria-hidden="true" />
 
     <div className="card card-google">
       <div className="google-header">

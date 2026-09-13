@@ -186,29 +186,26 @@ button{font-family:inherit;}
 .stage{
   position:relative;
   width:min(100%,420px);
-  aspect-ratio:420/500;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
-.connectors{
-  position:absolute;inset:0;width:100%;height:100%;
-}
-.connector-line{
-  fill:none;
-  stroke:url(#lineGrad);
-  stroke-width:1.6;
-  stroke-dasharray:1;
+.connector{
+  width:2px;
+  height:36px;
+  border-radius:2px;
+  background:linear-gradient(180deg,var(--green),var(--green-2));
   filter:drop-shadow(0 0 6px var(--green-glow));
+  transform-origin:top center;
 }
 
 .card{
-  position:absolute;left:50%;
   width:78%;
-  transform:translateX(-50%);
   border-radius:var(--radius-m);
   padding:16px 18px;
   border:1px solid var(--line-2);
 }
 .card-payment{
-  top:0%;
   background:linear-gradient(165deg,var(--bg-2),var(--bg-1));
   box-shadow:0 20px 50px -20px rgba(0,0,0,.6);
   animation:cardPayment 11s infinite;
@@ -234,7 +231,6 @@ button{font-family:inherit;}
 }
 
 .card-whatsapp{
-  top:39%;
   background:linear-gradient(165deg,#10201a,#0c1613);
   border-color:rgba(62,207,142,.25);
   box-shadow:0 20px 50px -20px rgba(0,0,0,.6);
@@ -267,7 +263,6 @@ button{font-family:inherit;}
 .wa-ticks{color:#5bb8ea;}
 
 .card-google{
-  top:78%;
   background:#efeee9;
   color:#20221f;
   border-color:rgba(0,0,0,.06);
@@ -296,44 +291,44 @@ button{font-family:inherit;}
 }
 
 @keyframes cardPayment{
-  0%{opacity:0;transform:translateX(-50%) translateY(12px) scale(.96);}
-  3%{opacity:1;transform:translateX(-50%) translateY(0) scale(1);}
-  78%{opacity:1;transform:translateX(-50%) translateY(0) scale(1);}
-  87%{opacity:.18;transform:translateX(-50%) translateY(-6px) scale(.98);}
-  95%,100%{opacity:0;transform:translateX(-50%) translateY(12px) scale(.96);}
+  0%{opacity:0;transform:translateY(12px) scale(.96);}
+  3%{opacity:1;transform:translateY(0) scale(1);}
+  78%{opacity:1;transform:translateY(0) scale(1);}
+  87%{opacity:.18;transform:translateY(-6px) scale(.98);}
+  95%,100%{opacity:0;transform:translateY(12px) scale(.96);}
 }
 @keyframes cardWhatsapp{
-  0%,8%{opacity:0;transform:translateX(-50%) translateY(14px) scale(.95);}
-  12%{opacity:1;transform:translateX(-50%) translateY(0) scale(1);}
-  78%{opacity:1;transform:translateX(-50%) translateY(0) scale(1);}
+  0%,8%{opacity:0;transform:translateY(14px) scale(.95);}
+  12%{opacity:1;transform:translateY(0) scale(1);}
+  78%{opacity:1;transform:translateY(0) scale(1);}
   87%{opacity:.18;}
-  95%,100%{opacity:0;transform:translateX(-50%) translateY(14px) scale(.95);}
+  95%,100%{opacity:0;transform:translateY(14px) scale(.95);}
 }
 @keyframes cardGoogle{
-  0%,16%{opacity:0;transform:translateX(-50%) translateY(14px) scale(.95);}
-  21%{opacity:1;transform:translateX(-50%) translateY(0) scale(1);}
-  78%{opacity:1;transform:translateX(-50%) translateY(0) scale(1);}
+  0%,16%{opacity:0;transform:translateY(14px) scale(.95);}
+  21%{opacity:1;transform:translateY(0) scale(1);}
+  78%{opacity:1;transform:translateY(0) scale(1);}
   87%{opacity:.18;}
-  95%,100%{opacity:0;transform:translateX(-50%) translateY(14px) scale(.95);}
+  95%,100%{opacity:0;transform:translateY(14px) scale(.95);}
 }
 @keyframes drawLine1{
-  0%,3%{stroke-dashoffset:1;opacity:0;}
+  0%,3%{transform:scaleY(0);opacity:0;}
   5%{opacity:1;}
-  9%{stroke-dashoffset:0;opacity:1;}
-  78%{stroke-dashoffset:0;opacity:1;}
+  9%{transform:scaleY(1);opacity:1;}
+  78%{transform:scaleY(1);opacity:1;}
   87%{opacity:.18;}
-  95%,100%{opacity:0;stroke-dashoffset:1;}
+  95%,100%{opacity:0;transform:scaleY(0);}
 }
 @keyframes drawLine2{
-  0%,12%{stroke-dashoffset:1;opacity:0;}
+  0%,12%{transform:scaleY(0);opacity:0;}
   14%{opacity:1;}
-  18%{stroke-dashoffset:0;opacity:1;}
-  78%{stroke-dashoffset:0;opacity:1;}
+  18%{transform:scaleY(1);opacity:1;}
+  78%{transform:scaleY(1);opacity:1;}
   87%{opacity:.18;}
-  95%,100%{opacity:0;stroke-dashoffset:1;}
+  95%,100%{opacity:0;transform:scaleY(0);}
 }
-#path1{animation:drawLine1 11s infinite;}
-#path2{animation:drawLine2 11s infinite;}
+.connector-1{animation:drawLine1 11s infinite;}
+.connector-2{animation:drawLine2 11s infinite;}
 
 @keyframes starFill1{0%,22%{opacity:0;transform:scale(.4);}24%{opacity:1;transform:scale(1.2);}25.5%{transform:scale(1);}78%{opacity:1;transform:scale(1);}95%,100%{opacity:0;transform:scale(.4);}}
 @keyframes starFill2{0%,24%{opacity:0;transform:scale(.4);}26%{opacity:1;transform:scale(1.2);}27.5%{transform:scale(1);}78%{opacity:1;transform:scale(1);}95%,100%{opacity:0;transform:scale(.4);}}
@@ -461,8 +456,9 @@ button{font-family:inherit;}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   .glow-text{animation:none;}
-  .card-payment,.card-whatsapp,.card-google,#path1,#path2,
-  .star.s1,.star.s2,.star.s3,.star.s4,.star.s5{animation:none !important;opacity:1 !important;transform:translateX(-50%) translateY(0) scale(1) !important;}
+  .card-payment,.card-whatsapp,.card-google{animation:none !important;opacity:1 !important;transform:translateY(0) scale(1) !important;}
+  .connector-1,.connector-2{animation:none !important;opacity:1 !important;transform:scaleY(1) !important;}
+  .star.s1,.star.s2,.star.s3,.star.s4,.star.s5{animation:none !important;opacity:1 !important;}
   .star{transform:scale(1) !important;}
   .stage.pulse{animation:none;}
   .reveal-up.pending{opacity:1;transform:none;}
