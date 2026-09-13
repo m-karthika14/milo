@@ -1,180 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Revlo — Automated Google Reviews via WhatsApp</title>
-<meta name="description" content="Revlo turns every happy customer into a 5-star Google review — automatically, through WhatsApp, with zero effort from your staff.">
-<meta property="og:title" content="Revlo — Turn happy customers into 5-star reviews">
-<meta property="og:description" content="Automatically ask your customers for a Google review through WhatsApp — so your business gets more reviews without your staff having to ask.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#08090a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%AD%90%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css">
+<meta name="description" content="Revlo turns every happy customer into a 5-star Google review — automatically, through WhatsApp, with zero effort from your staff." />
+<meta property="og:title" content="Revlo — Turn happy customers into 5-star reviews" />
+<meta property="og:description" content="Automatically ask your customers for a Google review through WhatsApp — so your business gets more reviews without your staff having to ask." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#08090a" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%AD%90%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
 </head>
 <body>
-
-<div class="progress" id="progress"></div>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="logo"><span class="logo-dot"></span>Revlo</div>
-    <a href="#final-cta" class="nav-link" data-scroll>Get Started</a>
-  </div>
-</nav>
-
-<main>
-
-<section class="hero" id="top">
-  <canvas class="hero-particles" id="particles" aria-hidden="true"></canvas>
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <span class="badge"><span class="badge-dot"></span>Automated review requests for local businesses</span>
-      <h1 class="headline">Turn happy customers<br>into <span class="glow-text">5-star reviews.</span></h1>
-      <p class="sub">Your customers already love your business.<br>We make it effortless for them to tell Google.</p>
-      <div class="cta-row">
-        <a href="#how-it-works" class="btn btn-primary" data-scroll>See How It Works <span class="arrow">→</span></a>
-        <button class="btn btn-ghost" id="watchDemoBtn" type="button">Watch Demo</button>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="stage" id="stage">
-        <svg class="connectors" viewBox="0 0 340 500" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3ecf8e"/>
-              <stop offset="100%" stop-color="#6be0ac"/>
-            </linearGradient>
-          </defs>
-          <path id="path1" class="connector-line" d="M170 92 C170 140, 170 150, 170 195" pathLength="1"/>
-          <path id="path2" class="connector-line" d="M170 292 C170 340, 170 350, 170 385" pathLength="1"/>
-        </svg>
-
-        <div class="card card-payment">
-          <div class="card-row-top">
-            <span class="check-icon">&#10003;</span>
-            <span class="card-label">Payment successful</span>
-          </div>
-          <div class="card-amount">&#8377;840</div>
-          <div class="card-meta"><span>Order #1842</span><span>2:41 PM</span></div>
-        </div>
-
-        <div class="card card-whatsapp">
-          <div class="wa-header">
-            <span class="wa-avatar">CB</span>
-            <div class="wa-id">
-              <span class="wa-name">Caf&#233; Bloom</span>
-              <span class="wa-status">via WhatsApp Business</span>
-            </div>
-          </div>
-          <div class="wa-bubble">
-            <p>Thanks for visiting! &#128075;</p>
-            <p>We'd love to hear about your experience.</p>
-            <p class="wa-link">Leave us a review &#8594;</p>
-            <span class="wa-time">2:41 PM <span class="wa-ticks">&#10003;&#10003;</span></span>
-          </div>
-        </div>
-
-        <div class="card card-google">
-          <div class="google-header">
-            <span class="g-logo"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span>
-            <span class="google-biz">Caf&#233; Bloom &middot; Indore</span>
-          </div>
-          <p class="google-q">How was your experience?</p>
-          <div class="stars">
-            <span class="star s1">&#9733;</span><span class="star s2">&#9733;</span><span class="star s3">&#9733;</span><span class="star s4">&#9733;</span><span class="star s5">&#9733;</span>
-          </div>
-          <div class="google-input">Share your experience</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-transform" id="transform">
-  <div class="section-inner">
-    <h2 class="section-heading reveal-up pending">One simple message.<br>A better reputation.</h2>
-    <p class="section-sub reveal-up pending">Most happy customers never leave a review simply because nobody asks. Automate the moment while the experience is still fresh.</p>
-
-    <div class="diagram-wrap reveal-up pending" id="diagramWrap">
-      <div class="diagram diagram-problem">
-        <div class="d-node">Customer leaves store</div>
-        <div class="d-arrow">&#8595;</div>
-        <div class="d-node muted">No one asks</div>
-        <div class="d-arrow">&#8595;</div>
-        <div class="d-node lost">Opportunity lost</div>
-      </div>
-      <div class="diagram diagram-solution">
-        <div class="d-node accent">Customer leaves store</div>
-        <div class="d-arrow accent">&#8595;</div>
-        <div class="d-node accent">WhatsApp message</div>
-        <div class="d-arrow accent">&#8595;</div>
-        <div class="d-node accent">Google review</div>
-        <div class="d-arrow accent">&#8595;</div>
-        <div class="d-node win">More social proof</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-steps" id="how-it-works">
-  <div class="section-inner">
-    <div class="step reveal-up pending" style="transition-delay:0s">
-      <span class="step-num">01</span>
-      <p class="step-text">Customer completes a purchase</p>
-    </div>
-    <div class="step reveal-up pending" style="transition-delay:.12s">
-      <span class="step-num">02</span>
-      <p class="step-text">They receive a WhatsApp message</p>
-    </div>
-    <div class="step reveal-up pending" style="transition-delay:.24s">
-      <span class="step-num">03</span>
-      <p class="step-text">They tap the link and leave a Google review</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-philosophy">
-  <div class="section-inner">
-    <h2 class="philosophy-statement reveal-up pending">Your staff shouldn't have to remember.</h2>
-    <div class="philosophy-lines">
-      <p class="reveal-up pending" style="transition-delay:.05s">No follow-ups.</p>
-      <p class="reveal-up pending" style="transition-delay:.15s">No spreadsheets.</p>
-      <p class="reveal-up pending" style="transition-delay:.25s">No awkward asking.</p>
-      <p class="reveal-up pending strong" style="transition-delay:.4s">Just automated review requests.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-final" id="final-cta">
-  <div class="final-glow"></div>
-  <div class="section-inner">
-    <h2 class="final-headline reveal-up pending">More happy customers.<br>More proof.<br>More growth.</h2>
-    <p class="final-sub reveal-up pending" style="transition-delay:.1s">Turn every great customer experience into an opportunity to build your reputation.</p>
-    <a href="#top" class="btn btn-primary btn-large reveal-up pending" data-scroll style="transition-delay:.2s">Get Started <span class="arrow">&#8594;</span></a>
-  </div>
-</section>
-
-</main>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="logo"><span class="logo-dot"></span>Revlo</div>
-      <p>Automated Google review requests for local businesses.</p>
-    </div>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
-      <a href="#">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">&copy; 2026 Revlo</div>
-</footer>
-
-<script src="script.js"></script>
+<div id="root"></div>
+<script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
